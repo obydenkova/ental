@@ -1,0 +1,7 @@
+#include <stdio.h>
+int main() {
+double a,b,c,d,f;
+double S1,S2,SO;
+double P1,P2,p1,p2;
+double G1,G2;
+cin>>a>>b>>

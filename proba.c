@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int max(int a, int b)
+{
+  if (a>b) {return a;}
+  return b;
+}
+int min(int a,int b)
+{
+  if (a<b) {return a;}
+  return b;
+}
+int ik(int a, int b, int c, int d)
+{
+  int i = (a*min(b,c)+b*min(a,c)+d^2)%20;
+  return i;
+}
+int jk(int a, int b, int c, int d)
+{
+  int j = (a%10-d)*(b%10+d)*(c%10-d)%25;
+  return j;
+}
+int lk(int a, int b, int c, int d)
+{
+  int l = max(min(a+b,a+c)%25, max(a+c,b+d)%20)+10;
+  return l;
+}
+int check(int i, int j)
+{
+  if((i+j+10)<=0 && (i+j+20)>=0)
+    {return 1;}
+  return 0;
+}
+
+int main()
+{
+  int i,j,k,l;
+  int flag = 0;
+  i = -22;
+  j = 14;
+  l = -14;
+  for(k = 0;k < 51;k++)
+    {
+      flag = check(i,j);
+      if(flag == 1)
+	{
+	  break;
+	}
+      i = ik(i,j,l,k);
+      j = jk(i,j,l,k);
+      l = lk(i,j,l,k);
+    }
+  if(flag == 0)
+    {printf("No intersection\ntime is out\n");}
+  if(flag == 1)
+    {printf("Intersection\ncoordinats are (%d,%d)\ntime is %d\nparameter is %d\n",i,j,k,l);}
+  return 1;
+}

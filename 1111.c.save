@@ -1,0 +1,8 @@
+#include <stdio.h>
+int main ()
+{
+char k[100];
+char a;int i,b;
+while ("k!=.");
+{
+

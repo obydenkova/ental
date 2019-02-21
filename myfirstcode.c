@@ -1,0 +1,6 @@
+#include <stdio.h> // input-output library
+
+int main() {
+printf ("hello 108");
+return 0;
+}
